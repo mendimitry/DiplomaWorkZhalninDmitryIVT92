@@ -14,9 +14,7 @@ using System.Windows.Forms;
 
 namespace NetworkDiscovery
 {
-    /// <summary>
-    /// NetworkDiscoveryClient class that transmits data into the multicast group network
-    /// </summary>
+
     public class Client : IDisposable
     {
         private const Int32 DEFAULT_SERVICE_PORT = 5040;
@@ -26,9 +24,7 @@ namespace NetworkDiscovery
         public IPEndPoint _endPoint;
         //Dispose flag
         private bool _disposed = false;
-        /// <summary>
-        /// NetworkDiscoveryClient dispose
-        /// </summary>
+
         public void Dispose()
         {
             Dispose(true);
@@ -42,7 +38,7 @@ namespace NetworkDiscovery
             }
             if (disposing)
             {
-                //disposition all unconrolling resources
+                
             }
             _disposed = true;
         }
@@ -72,9 +68,6 @@ namespace NetworkDiscovery
             }
         }
 
-        /// <summary>
-        /// NetworkDiscoveryClient initialization
-        /// </summary>
         public void Init()
         {
             var appConfig = ConfigurationManager.GetSection("main") as NameValueCollection;
@@ -124,11 +117,7 @@ namespace NetworkDiscovery
             }
         }
 
-        /// <summary>
-        /// NetworkDiscoveryClient sending data to MulticastGroup network
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="data"></param>
+
         public void Sending<T>(T data)
         {
             Byte[] transmittedData = XmlSerializeToByte(data);

@@ -47,11 +47,6 @@ namespace ClientPing
         static void Main(string[] args)
         {
 
-            //var handle = GetConsoleWindow();
-
-
-            //ShowWindow(handle, SW_HIDE);
-
           
             MessageBox.Show("Запущен бот " + bot.GetMeAsync().Result.FirstName + "\n" + "Запущен фоновый режим работы приложения");
             

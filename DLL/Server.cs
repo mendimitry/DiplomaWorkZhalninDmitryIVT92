@@ -19,19 +19,12 @@ using Telegram.Bot.Types;
 
 namespace NetworkDiscovery
 {
-    /// <summary>
-    /// NetworkDiscoveryServer class that receives data from the multicast group network
-    /// IMPORTANT Windows firewall must be open on UDP port 5040
-    /// </summary>
+ 
     public class Server : IDisposable
     {
-        /// <summary>
-        /// ListeningCond is a variable for enabling/disabling NetworkDiscoveryServer's listening     
-        /// </summary>
+      
         public delegate void EventCast(Message cC);
-        /// <summary>
-        /// MessageReceived it is event which will be called by the delegate of the class subscribed to it   
-        /// </summary>
+     
         public event EventCast MessageReceived;
         private const Int32 DEFAULT_SERVICE_PORT = 5040;
         private Int32 _servicePort;
@@ -58,9 +51,9 @@ namespace NetworkDiscovery
             }
             if (disposing)
             {
-                //disposition all unconrolling resources
+                
             }
-            _disposed = true; //помечаем флаг что метод Dispose уже был вызван
+            _disposed = true; 
         }
 
         private String GetCheckedValue(NameValueCollection values, String key, Dictionary<String, String> defaultConfigValues)
@@ -105,8 +98,7 @@ namespace NetworkDiscovery
 
                 IPAddress.TryParse(GetCheckedValue(appConfig, "multicastGropuHost", defaultConfigValues), out _multicastGropuHost);
 
-                ///Уточнить IPAddress.Any или _multicastGropuHost
-                ///_remoteEndPoint = new IPEndPoint(_multicastGropuHost, _servicePort);
+
                 _remoteEndPoint = new IPEndPoint(IPAddress.Any, _servicePort);
                 if (_remoteEndPoint == null)
                     MessageBox.Show($"SERVER: Error, failed on initialization <_endPoint>");
@@ -211,9 +203,6 @@ namespace NetworkDiscovery
             Console.WriteLine($"SERVER: Received  message ({message}) from {_remoteEndPoint.Address} port {_remoteEndPoint.Port}");
         }
 
-        /// <summary>
-        /// Listening for activity on all network interfaces
-        /// </summary>
         public void Listening()
         {
             Init();
@@ -223,11 +212,10 @@ namespace NetworkDiscovery
                 while (!_disposed)
                 {
 
-                    //for(; ; )  // решение адекватное, ибо бывает временами сокет не принимается сервером принудительно бесконечный цикл
-                    //{
+                 
                         await ReceiveData();
                         Console.WriteLine("Server listening...");
-                  //  }
+                 
                    
                 }
                 

@@ -5,9 +5,7 @@ using System.Xml.Serialization;
 
 namespace NetworkDiscovery
 {
-    /// <summary>
-    /// CommonClass is a test data for transmitting between client and server
-    /// </summary>
+ 
     [Serializable, XmlRoot("CommonClass", Namespace = "")]
     public class Message
     {
