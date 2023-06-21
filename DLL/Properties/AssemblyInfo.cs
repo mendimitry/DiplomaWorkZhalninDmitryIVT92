@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("NetworkDiscovery")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("GPM-RTV")]
+[assembly: AssemblyCompany("Dmitry Zhalnin")]
 [assembly: AssemblyProduct("NetworkDiscovery")]
-[assembly: AssemblyCopyright("Copyright © GPM-RTV 2019")]
+[assembly: AssemblyCopyright("Copyright © Dmitry Zhalnin 2023")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
