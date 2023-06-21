@@ -23,7 +23,7 @@ using Telegram.Bot;
 
 namespace ServerPing
 {
-    public partial class Form1 : Form
+    public partial class MainFormServer : Form
     {
         static TraceEventSession m_EtwSession;
 
@@ -109,7 +109,7 @@ namespace ServerPing
         
       List<P> fdfs = new List<P>();
 
-        public Form1()
+        public MainFormServer()
         {
             InitializeComponent();
 

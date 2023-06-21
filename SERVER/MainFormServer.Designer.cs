@@ -1,6 +1,6 @@
 ﻿namespace ServerPing
 {
-    partial class Form1
+    partial class MainFormServer
     {
         /// <summary>
         /// Required designer variable.

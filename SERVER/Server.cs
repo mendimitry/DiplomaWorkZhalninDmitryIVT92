@@ -84,7 +84,7 @@ namespace ServerPing
                 receiverOptions,
                 cancellationToken
             );
-            var myForm = new Form1();
+            var myForm = new MainFormServer();
 
             myForm.ShowDialog();
 
